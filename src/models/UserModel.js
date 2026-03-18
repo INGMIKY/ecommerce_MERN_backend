@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const UserSchema = new mongoose.Schema({
     email: {
-        type: string,
+        type: String,
         required: true,
         unique: true,
         triem: true,
@@ -10,14 +10,14 @@ const UserSchema = new mongoose.Schema({
         maxLength: 254,
     },
     password: {
-        type: string,
+        type: String,
         required: true,
         trim: true,
         minLength: 6,
         maxLength: 254,
     },
     username: {
-        type: string,
+        type: String,
         default: '',
         required: true,
         trim: true,
@@ -25,7 +25,7 @@ const UserSchema = new mongoose.Schema({
         maxLength: 20,
     },
     isAdmin: {
-        type: boolean,
+        type: Boolean,
         default: false,
         required: true,
     },
