@@ -33,9 +33,6 @@ export const registerUser = async (req, res) => {
             isAdmin: isFirstUser,
         })
 
-        console.log('JWT_SECRET existe?', !!process.env.JWT_SECRET)
-        console.log('JWT_SECRET:', process.env.JWT_SECRET)
-
         // Generar un token con JWT
         // payload
         const token = jwt.sign({ userId: newUser._id }, JWT_SECRET, {
@@ -95,7 +92,7 @@ export const profile = async (req, res) => {
         })
     } catch (error) {
         console.error('Error en profile:', error)
-        return res.status(401).json({ message: 'Token inválido o expirado' })
+        return res.status(401).json({ message: 'No autorizado' })
     }
 
     return {
