@@ -1,0 +1,18 @@
+### USER REGISTER
+POST http://localhost:3001/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "nuevoUser",
+    "email": "nuevouser@gmail.com",
+    "password": "user123"
+}
+
+### LOGIN USER
+POST http://localhost:3001/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "nuevouser@gmail.com",
+    "password": "user123"
+}
